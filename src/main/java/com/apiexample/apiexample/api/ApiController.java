@@ -10,7 +10,7 @@ public class ApiController {
     @ResponseBody
     @GetMapping("/api/hello")
     public String hello() {
-        
+
         return "hello!!";
     }
 }
