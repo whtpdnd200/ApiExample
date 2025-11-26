@@ -28,7 +28,7 @@ public class ApiController {
     }
 
     @ResponseBody
-    @GetMapping("/weather")
+    @GetMapping("/house")
     public String getWeather() {
 
         return apiService.get();
