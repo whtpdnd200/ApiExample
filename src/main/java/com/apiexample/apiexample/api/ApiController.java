@@ -43,6 +43,12 @@ public class ApiController {
         return "/api/apiMain";
     }
 
+    @GetMapping("/sgg")
+    public String sgg() {
+
+        return "/api/test";
+    }
+
     @ResponseBody
     @GetMapping("/sgg-list")
     public List<String> sggList() {
