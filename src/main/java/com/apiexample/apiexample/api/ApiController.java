@@ -1,5 +1,6 @@
 package com.apiexample.apiexample.api;
 
+import com.apiexample.apiexample.api.domain.Responses;
 import com.apiexample.apiexample.api.service.ApiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -64,8 +65,14 @@ public class ApiController {
 
     @ResponseBody
     @GetMapping("/house")
-    public String getWeather() {
+    public Responses getWeather() {
+        Responses responses = null;
+        try {
+            responses = apiService.get();
+        } catch (Exception e) {
+            return null;
+        }
 
-        return apiService.get();
+        return responses;
     }
 }
