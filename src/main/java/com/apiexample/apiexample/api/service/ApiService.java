@@ -12,7 +12,8 @@ public class ApiService {
 
     public String get() {
 
-        String json = webClient.get()
+
+        return  webClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .path("/api/notice/basicInfo2.do")
                         .queryParam("key", key)
@@ -22,7 +23,5 @@ public class ApiService {
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
-
-        return json;
     }
 }
