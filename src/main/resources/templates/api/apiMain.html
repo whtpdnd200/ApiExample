@@ -7,11 +7,23 @@
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
-<div>
-    <button id="Btn" type="button">버튼</button>
-</div>
+    <div class="container" id="container">
+        <select id="citySelect">
+            <option>- 도시 목록 -</option>
+            <option th:each="city : ${cityList}" th:text="${city}"></option>
+        </select>
+        <select>
+            <option>도시를 선택하세요</option>
+            <option th:each="sgg : ${sggList}" th:text="${sgg}"></option>
+        </select>
+    </div>
+    <div>
+        <button id="Btn" type="button">버튼</button>
+    </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script>
+
+
 
     $("#Btn").on("click", function() {
 
