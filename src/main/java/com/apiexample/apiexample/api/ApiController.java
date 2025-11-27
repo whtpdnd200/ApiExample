@@ -40,15 +40,20 @@ public class ApiController {
 
         model.addAttribute("cityList", lst);
 
+        return "/api/apiMain";
+    }
+
+    @ResponseBody
+    @GetMapping("/sgg-list")
+    public List<String> sggList() {
+
         List<String> sggList = new ArrayList<>();
         sggList.add("강남구");
         sggList.add("강동구");
         sggList.add("강서구");
         sggList.add("강북구");
-        model.addAttribute("sggList", sggList);
 
-
-        return "/api/apiMain";
+        return sggList;
     }
 
     @ResponseBody
