@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @RequestMapping("/api")
 @Controller
@@ -19,6 +20,7 @@ public class ApiController {
 
     @Autowired
     private ApiService apiService;
+
 
     @ResponseBody
     @GetMapping("/hello")
@@ -66,7 +68,7 @@ public class ApiController {
     @GetMapping("/kinder-list")
     public String kinderList(Model model) {
 
-        model.addAttribute("kinderList", getKinderList().getKinderInfo());
+        model.addAttribute("kinderList", apiService.getKinderMap());
         return "/api/kinderlist";
     }
 
