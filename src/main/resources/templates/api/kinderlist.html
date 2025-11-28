@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>유치원 정보</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h2>유치원 리스트</h2>
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>이름</th>
+                    <th>위치</th>
+                    <th>운영 시간</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="kinder : ${kinderList}">
+                    <td th:text="${kinder.key}"></td>
+                    <td th:text="${kinder.kindername}"></td>
+                    <td th:text="${kinder.addr}"></td>
+                    <td th:text="${kinder.opertime}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</body>
+</html>

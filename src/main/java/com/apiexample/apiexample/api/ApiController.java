@@ -63,9 +63,16 @@ public class ApiController {
         return sggList;
     }
 
+    @GetMapping("/kinder-list")
+    public String kinderList(Model model) {
+
+        model.addAttribute("kinderList", getKinderList().getKinderInfo());
+        return "/api/kinderlist";
+    }
+
     @ResponseBody
     @GetMapping("/house")
-    public Responses getWeather() {
+    public Responses getKinderList() {
         Responses responses = null;
         try {
             responses = apiService.get();
